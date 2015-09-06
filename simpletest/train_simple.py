@@ -58,10 +58,8 @@ N_test = y_test.size
 
 
 # Prepare multi-layer perceptron model
-model = chainer.FunctionSet(l1=F.Linear(1, 100),
-                            l2=F.Linear(100, 6),
-                            l3=F.Linear(6,100),
-                            l4=F.Linear(100,1000))
+model = chainer.FunctionSet(l1=F.Linear(1, n_units),
+                            l2=F.Linear(n_units, 6))
 
 def forward(x_data, y_data, train=True):
     # Neural net architecture
